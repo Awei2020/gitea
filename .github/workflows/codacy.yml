@@ -24,7 +24,7 @@ jobs:
                       "driver":{
                           "name":"Murphy-cli",
                           "rules":[
-                              {
+                              {"id": "SNYK-GOLANG-GOLANGORGXTEXTLANGUAGE-3043869",
                                   "shortDescription":{
                                       "text":"Highterser5.13.1"
                                   },
@@ -32,7 +32,7 @@ jobs:
                                       "text":"Highterser5.13.1"
                                   }
                               },
-                              {
+                              {"id": "SNYK-GOLANG-GOLANGORGXTEXTLANGUAGE-3043866",
                                   "shortDescription":{
                                       "text":"Highloader-utils2.0.2"
                                   },
@@ -40,7 +40,7 @@ jobs:
                                       "text":"Highloader-utils2.0.2"
                                   }
                               },
-                              {
+                              {"id": "SNYK-GOLANG-GOLANGORGXTEXTLANGUAGE-304386",
                                   "shortDescription":{
                                       "text":"Mediummermaid9.1.1"
                                   },
@@ -48,7 +48,7 @@ jobs:
                                       "text":"Mediummermaid9.1.1"
                                   }
                               },
-                              {
+                              {"id": "SNYK-GOLANG-GOLANGORGXTEXTLANGUAGE-30438",
                                   "shortDescription":{
                                       "text":"Mediumneedle2.9.1"
                                   },
@@ -56,7 +56,7 @@ jobs:
                                       "text":"Mediumneedle2.9.1"
                                   }
                               },
-                              {
+                              {"id": "SNYK-GOLANG-GOLANGORGXTEXTLANGUAGE-304",
                                   "shortDescription":{
                                       "text":"Medium@braintree/sanitize-url6.0.0"
                                   },
@@ -64,7 +64,7 @@ jobs:
                                       "text":"Medium@braintree/sanitize-url6.0.0"
                                   }
                               },
-                              {
+                              {"id": "SNYK-GOLANG-GOLANGORGXTEXTLANGUAGE-309",
                                   "shortDescription":{
                                       "text":"Highgoogle.golang.org/protobufv1.28.0"
                                   },
@@ -72,7 +72,7 @@ jobs:
                                       "text":"Highgoogle.golang.org/protobufv1.28.0"
                                   }
                               },
-                              {
+                              {"id": "SNYK-GOLANG-GOLANGORGXTEXTLANGUAGE-9",
                                   "shortDescription":{
                                       "text":"Criticalwebpack5.72.1"
                                   },
@@ -80,7 +80,7 @@ jobs:
                                       "text":"Criticalwebpack5.72.1"
                                   }
                               },
-                              {
+                              {"id": "SNYK-GOLANG-GOLANGORGXTEXTLANGUAGE-3000",
                                   "shortDescription":{
                                       "text":"Highjson52.2.1"
                                   },
@@ -88,7 +88,7 @@ jobs:
                                       "text":"Highjson52.2.1"
                                   }
                               },
-                              {
+                              {"id": "SNYK-GOLANG-GOLANGORGXTEXTLANGUAGE-3768",
                                   "shortDescription":{
                                       "text":"Mediumlodash.merge4.6.2"
                                   },
@@ -96,7 +96,7 @@ jobs:
                                       "text":"Mediumlodash.merge4.6.2"
                                   }
                               },
-                              {
+                              {"id": "SNYK-GOLANG-GOLANGORGXTEXTLANGUAGE-30345",
                                   "shortDescription":{
                                       "text":"Highlodash.template4.5.0"
                                   },
@@ -104,7 +104,7 @@ jobs:
                                       "text":"Highlodash.template4.5.0"
                                   }
                               },
-                              {
+                              {"id": "SNYK-GOLANG-GOLANGORGXTEXTLANGUAGE-787979",
                                   "shortDescription":{
                                       "text":"Mediumgolang.org/x/sysv0.0.0-20220503163025-988cb79eb6c6"
                                   },
@@ -112,7 +112,7 @@ jobs:
                                       "text":"Mediumgolang.org/x/sysv0.0.0-20220503163025-988cb79eb6c6"
                                   }
                               },
-                              {
+                              {"id": "SNYK-GOLANG-GOLANGORGXTEXTLANGUAGE-34567",
                                   "shortDescription":{
                                       "text":"Highgolang.org/x/netv0.0.0-20220425223048-2871e0cb64e4"
                                   },
@@ -120,7 +120,7 @@ jobs:
                                       "text":"Highgolang.org/x/netv0.0.0-20220425223048-2871e0cb64e4"
                                   }
                               },
-                              {
+                              {"id": "SNYK-GOLANG-GOLANGORGXTEXTLANGUAGE-987",
                                   "shortDescription":{
                                       "text":"Highgopkg.in/yaml.v3v3.0.0-20210107192922-496545a6307b"
                                   },
