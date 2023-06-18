@@ -28,7 +28,7 @@ jobs:
               },
               "results" : [ {
               "message" : {
-                  "text" : "展示漏洞数量"
+                  "text" : "展示漏洞数量",
                   "high" : "666"
               },
               "locations" : [ {
