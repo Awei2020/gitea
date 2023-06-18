@@ -13,7 +13,7 @@ jobs:
         with:
           args: --sarif-file-output=snyk.sarif
       - name: cat
-        run: cat snyk.sarif
+        run: find / -name snyk.sarif
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@v2
         with:
