@@ -25,10 +25,3 @@ jobs:
         with:
           name: sarif-report
           path: sarif-report.sarif
-
-
-
-
-
-
-Regenerate response
