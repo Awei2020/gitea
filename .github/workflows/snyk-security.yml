@@ -51,7 +51,7 @@ jobs:
         # Runs Snyk Code (SAST) analysis and uploads result into GitHub.
         # Use || true to not fail the pipeline
       - name: Snyk Code test
-        run: snyk code  --sarif > snyk-code.sarif
+        run: snyk code gitea --sarif > snyk-code.sarif
       - name: cat Code test
         run: cat snyk-code.sarif
        
