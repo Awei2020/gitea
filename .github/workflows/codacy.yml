@@ -16,3 +16,7 @@ jobs:
       - name: Scan
         run: |
           murphysec scan . --token 98e5c144e91ef72aeebde4ac2a20e963
+      - name: Upload SARIF file
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: results.sarif
