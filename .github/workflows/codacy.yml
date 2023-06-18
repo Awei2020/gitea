@@ -29,11 +29,12 @@ jobs:
               "results" : [ {
               "message" : {
                   "text" : "展示漏洞数量"
+                  "high" : "666"
               },
               "locations" : [ {
                   "physicalLocation" : {
                   "artifactLocation" : {
-                      "uri" : "src/build.cmd"
+                      "uri" : "go.mod"
                   },
                   "region" : {
                       "startLine" : 2,
