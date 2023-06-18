@@ -23,12 +23,12 @@ jobs:
           {
               "tool" : {
               "driver" : {
-                  "name" : "Tool Name"
+                  "name" : "murphysec代码扫描结果"
               }
               },
               "results" : [ {
               "message" : {
-                  "text" : "Result text. This result does not have a rule associated."
+                  "text" : "展示漏洞数量"
               },
               "locations" : [ {
                   "physicalLocation" : {
