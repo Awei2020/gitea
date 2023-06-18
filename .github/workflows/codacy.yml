@@ -15,41 +15,43 @@ jobs:
           wget -q https://s.murphysec.com/release/install.sh -O - | /bin/bash
       - name: Scan
         run: |
-          echo "{
-    "$schema" : "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
-    "version" : "2.1.0",
-    "runs" :
-    [
-    {
-        "tool" : {
-        "driver" : {
-            "name" : "Tool Name"
-        }
-        },
-        "results" : [ {
-        "message" : {
-            "text" : "Result text. This result does not have a rule associated."
-        },
-        "locations" : [ {
-            "physicalLocation" : {
-            "artifactLocation" : {
-                "uri" : "src/build.cmd"
-            },
-            "region" : {
-                "startLine" : 2,
-                "startColumn" : 7,
-                "endColumn" : 10
-            }
-            }
-        } ],
-        "partialFingerprints" : {
-            "primaryLocationLineHash" : "39fa2ee980eb94b0:1"
-        }
-        }]
-    }
-    ]
-}" > results.sarif
+          cat << EOF >results.sarif {
+          "$schema" : "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+          "version" : "2.1.0",
+          "runs" :
+          [
+          {
+              "tool" : {
+              "driver" : {
+                  "name" : "Tool Name"
+              }
+              },
+              "results" : [ {
+              "message" : {
+                  "text" : "Result text. This result does not have a rule associated."
+              },
+              "locations" : [ {
+                  "physicalLocation" : {
+                  "artifactLocation" : {
+                      "uri" : "src/build.cmd"
+                  },
+                  "region" : {
+                      "startLine" : 2,
+                      "startColumn" : 7,
+                      "endColumn" : 10
+                  }
+                  }
+              } ],
+              "partialFingerprints" : {
+                  "primaryLocationLineHash" : "39fa2ee980eb94b0:1"
+              }
+              }]
+          }
+          ]
+      }
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: results.sarif
+
+
