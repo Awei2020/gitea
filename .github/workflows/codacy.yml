@@ -15,7 +15,7 @@ jobs:
           wget -q https://s.murphysec.com/release/install.sh -O - | /bin/bash
       - name: Scan
         run: |
-          echo >results.sarif {
+          echo >results.sarif '{
           "$schema" : "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
           "version" : "2.1.0",
           "runs" :
@@ -48,7 +48,7 @@ jobs:
               }]
           }
           ]
-          }
+          }'
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v2
         with:
