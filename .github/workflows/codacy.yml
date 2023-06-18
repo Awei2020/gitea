@@ -1,7 +1,5 @@
 #github actions 实现代码自动化扫描
 name: "Murphysecurity"
-description: "Murphysecurity"
-author: "Murphysecurity"
 on:
   push:
     branches:
