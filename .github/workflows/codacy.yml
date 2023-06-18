@@ -15,8 +15,20 @@ jobs:
           wget -q https://s.murphysec.com/release/install.sh -O - | /bin/bash
       - name: Scan
         run: |
-          murphysec scan . --token 98e5c144e91ef72aeebde4ac2a20e963 --json >results.sarif
-      - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@v2
+          murphysec scan . --token 98e5c144e91ef72aeebde4ac2a20e963 --json >results.json
+      - name: Convert to SARIF
+        run: |
+          sarif-convert results.json -o sarif-report.sarif
+
+      - name: Upload SARIF report
+        uses: actions/upload-artifact@v2
         with:
-          sarif_file: results.sarif
+          name: sarif-report
+          path: sarif-report.sarif
+
+
+
+
+
+
+Regenerate response
