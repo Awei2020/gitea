@@ -15,41 +15,7 @@ jobs:
           wget -q https://s.murphysec.com/release/install.sh -O - | /bin/bash
       - name: Scan
         run: |
-          echo >results.sarif '{
-          "$schema" : "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
-          "version" : "2.1.0",
-          "runs" :
-          [
-          {
-              "tool" : {
-              "driver" : {
-                  "name" : "murphysec代码扫描结果"
-              }
-              },
-              "results" : [ {
-              "message" : {
-                  "text" : "展示漏洞数量",
-                  "high" : "666"
-              },
-              "locations" : [ {
-                  "physicalLocation" : {
-                  "artifactLocation" : {
-                      "uri" : "go.mod"
-                  },
-                  "region" : {
-                      "startLine" : 2,
-                      "startColumn" : 7,
-                      "endColumn" : 10
-                  }
-                  }
-              } ],
-              "partialFingerprints" : {
-                  "primaryLocationLineHash" : "39fa2ee980eb94b0:1"
-              }
-              }]
-          }
-          ]
-          }'
+          echo >results.sarif '{'$schema': 'https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json', 'version': '2.1.0', 'runs': [{'tool': {'driver': {'name': 'Murphy-cli', 'rules': [{'shortDescription': {'text': 'Highterser5.13.1'}, 'fullDescription': {'text': 'Highterser5.13.1'}}, {'shortDescription': {'text': 'Highloader-utils2.0.2'}, 'fullDescription': {'text': 'Highloader-utils2.0.2'}}, {'shortDescription': {'text': 'Mediummermaid9.1.1'}, 'fullDescription': {'text': 'Mediummermaid9.1.1'}}, {'shortDescription': {'text': 'Mediumneedle2.9.1'}, 'fullDescription': {'text': 'Mediumneedle2.9.1'}}, {'shortDescription': {'text': 'Medium@braintree/sanitize-url6.0.0'}, 'fullDescription': {'text': 'Medium@braintree/sanitize-url6.0.0'}}, {'shortDescription': {'text': 'Highgoogle.golang.org/protobufv1.28.0'}, 'fullDescription': {'text': 'Highgoogle.golang.org/protobufv1.28.0'}}, {'shortDescription': {'text': 'Criticalwebpack5.72.1'}, 'fullDescription': {'text': 'Criticalwebpack5.72.1'}}, {'shortDescription': {'text': 'Highjson52.2.1'}, 'fullDescription': {'text': 'Highjson52.2.1'}}, {'shortDescription': {'text': 'Mediumlodash.merge4.6.2'}, 'fullDescription': {'text': 'Mediumlodash.merge4.6.2'}}, {'shortDescription': {'text': 'Highlodash.template4.5.0'}, 'fullDescription': {'text': 'Highlodash.template4.5.0'}}, {'shortDescription': {'text': 'Mediumgolang.org/x/sysv0.0.0-20220503163025-988cb79eb6c6'}, 'fullDescription': {'text': 'Mediumgolang.org/x/sysv0.0.0-20220503163025-988cb79eb6c6'}}, {'shortDescription': {'text': 'Highgolang.org/x/netv0.0.0-20220425223048-2871e0cb64e4'}, 'fullDescription': {'text': 'Highgolang.org/x/netv0.0.0-20220425223048-2871e0cb64e4'}}, {'shortDescription': {'text': 'Highgopkg.in/yaml.v3v3.0.0-20210107192922-496545a6307b'}, 'fullDescription': {'text': 'Highgopkg.in/yaml.v3v3.0.0-20210107192922-496545a6307b'}}]}}, 'results': [{'message': {'text': 'hello world'}}], 'locations': [{'physicalLocation': {'artifactLocation': {'uri': ''}, 'region': {'startLine': 2, 'startColumn': 7, 'endColumn': 10}}}], 'partialFingerprints': {'primaryLocationLineHash': 'hash'}}]}'
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v2
         with:
