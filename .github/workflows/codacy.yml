@@ -133,7 +133,7 @@ jobs:
                   },
                   "results":[
                       {
-          "ruleId": "SNYK-GOLANG-GITHUBCOMMATTNGOSQLITE3-3121037",
+          "ruleId": "SNYK-GOLANG-GOLANGORGXTEXTLANGUAGE-3043869",
           "level": "warning",
           "message": {
             "text": "This file introduces a vulnerable github.com/mattn/go-sqlite3 package with a medium severity vulnerability."
@@ -152,7 +152,7 @@ jobs:
           ]
            },
           {
-          "ruleId": "SNYK-GOLANG-GITHUBCOMPROMETHEUSCLIENTGOLANGPROMETHEUSPROMHTTP-2401819",
+          "ruleId": "SNYK-GOLANG-GOLANGORGXTEXTLANGUAGE-3043866",
           "level": "error",
           "message": {
             "text": "This file introduces a vulnerable github.com/prometheus/client_golang/prometheus/promhttp package with a high severity vulnerability."
