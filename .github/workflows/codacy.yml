@@ -23,7 +23,7 @@ jobs:
           jq -c '.' results.json > sarif-report.sarif
 
       - name: Upload SARIF report
-        uses: actions/upload-artifact@v2
+        uses: github/codeql-action/upload-sarif@v2
         with:
           name: sarif-report
           path: sarif-report.sarif
