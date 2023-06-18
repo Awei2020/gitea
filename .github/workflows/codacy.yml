@@ -20,7 +20,7 @@ jobs:
           murphysec scan . --token 98e5c144e91ef72aeebde4ac2a20e963 --json >results.json
       - name: Convert to SARIF
         run: |
-          jq -c '.' scan-results.json > sarif-report.sarif
+          jq -c '.' results.json > sarif-report.sarif
 
       - name: Upload SARIF report
         uses: actions/upload-artifact@v2
