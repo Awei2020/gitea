@@ -8,424 +8,388 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Install  CLI
-        run: |
-          wget -q https://s.murphysec.com/release/install.sh -O - | /bin/bash
       - name: Scan
         run: |
           echo >results.sarif '{
-          "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
-          "version": "2.1.0",
-          "runs": [
-              {
-                  "tool": {
-                      "driver": {
-                          "name": "Murphy-cli",
-                          "rules": [
-                              {
-                                  "id": "murphysec-CVE-2022-25858",
-                                  "shortDescription": {
-                                      "text": "Highterser5.13.1"
-                                  },
-                                  "fullDescription": {
-                                      "text": "Highterser5.13.1"
-                                  },
-                                  "help": {
-                                      "text": "* terser\u662fterser\u4e2a\u4eba\u5f00\u53d1\u8005\u7684\u4e00\u4e2a\u7528\u4e8e ES6+ \u7684 JavaScript \u89e3\u6790\u5668\u3001\u5904\u7406\u7a0b\u5e8f\u548c\u538b\u7f29\u5668\u5de5\u5177\u5305\u3002 \nterser 4.8.1 \u4e4b\u524d\u7248\u672c\u30015.0.0 \u548c 5.14.2 \u4e4b\u524d\u7248\u672c\u5b58\u5728\u5b89\u5168\u6f0f\u6d1e\uff0c\u8be5\u6f0f\u6d1e\u6e90\u4e8e\u6b63\u5219\u8868\u8fbe\u5f0f\u7684\u4f7f\u7528\u4e0d\u5b89\u5168\uff0c\u5bfc\u81f4\u5bb9\u6613\u53d7\u5230\u6b63\u5219\u8868\u8fbe\u5f0f\u62d2\u7edd\u670d\u52a1 (ReDoS) \u7684\u653b\u51fb\u3002"
-                                  }
-                              },
-                              {
-                                  "id": "murphysec-CVE-2022-37599",
-                                  "shortDescription": {
-                                      "text": "Highloader-utils2.0.2"
-                                  },
-                                  "fullDescription": {
-                                      "text": "Highloader-utils2.0.2"
-                                  },
-                                  "help": {
-                                      "text": "* loader-utils\u662fwebpack\u5f00\u6e90\u7684\u4e00\u4e2a\u7528\u4e8e webpack \u52a0\u8f7d\u5668\u7684\u5b9e\u7528\u7a0b\u5e8f\u3002 \nwebpack loader-utils 2.0.0\u7248\u672c\u5b58\u5728\u5b89\u5168\u6f0f\u6d1e\uff0c\u8be5\u6f0f\u6d1e\u6e90\u4e8e\u5728interpolateName\u7684interpoleName\u51fd\u6570\u4e2d\u53d1\u73b0\u5305\u542b\u6b63\u5219\u8868\u8fbe\u5f0f\u62d2\u7edd\u670d\u52a1\uff08ReDoS\uff09\u6f0f\u6d1e\u3002"
-                                  }
-                              },
-                              {
-                                  "id": "murphysec-CVE-2022-31108",
-                                  "shortDescription": {
-                                      "text": "Mediummermaid9.1.1"
-                                  },
-                                  "fullDescription": {
-                                      "text": "Mediummermaid9.1.1"
-                                  },
-                                  "help": {
-                                      "text": "* Mermaid\u662f\u4e00\u4e2a\u5e94\u7528\u8f6f\u4ef6\u3002\u4f7f\u7528\u6587\u672c\u548c\u4ee3\u7801\u521b\u5efa\u56fe\u8868\u548c\u53ef\u89c6\u5316\u3002\nMermaid 9.1.3\u4e4b\u524d\u7248\u672c\u5b58\u5728\u6ce8\u5165\u6f0f\u6d1e\uff0c\u8be5\u6f0f\u6d1e\u6e90\u4e8e\u53ea\u8981\u6709\u5b9e\u9645\u5339\u914d\uff0c\u6d4f\u89c8\u5668\u5c31\u4f1a\u53d1\u51fa\u4e00\u4e2a http \u8bf7\u6c42\uff0c\u4ee5 load \u4e00\u4e2a\u80cc\u666f\u56fe\u50cf\uff0c\u8ba9\u653b\u51fb\u8005\u77e5\u9053\u8be5\u5b57\u7b26\u7684\u503c\u662f\u4ec0\u4e48\uff0c\u653b\u51fb\u8005\u5229\u7528\u8be5\u6f0f\u6d1e\u80fd\u591f\u5c06\u4efb\u610f CSS \u6ce8\u5165\u5230\u751f\u6210\u7684\u56fe\u5f62\u4e2d\uff0c\u4ece\u800c\u5141\u8bb8\u4ed6\u4eec\u66f4\u6539\u751f\u6210\u56fe\u5f62\u4e4b\u5916\u7684\u5143\u7d20\u6837\u5f0f\uff0c\u5e76\u53ef\u80fd\u901a\u8fc7\u4f7f\u7528\u7279\u5236\u7684 CSS \u9009\u62e9\u5668\u6cc4\u9732\u654f\u611f\u4fe1\u606f\u3002"
-                                  }
-                              },
-                              {
-                                  "id": "murphysec-",
-                                  "shortDescription": {
-                                      "text": "Mediumneedle2.9.1"
-                                  },
-                                  "fullDescription": {
-                                      "text": "Mediumneedle2.9.1"
-                                  },
-                                  "help": {
-                                      "text": "* needle \u662f \u4e00\u6b3e\u6d41\u5f0f\u4f20\u8f93\u7684HTTP\u5ba2\u6237\u7aef\nneedle \u6ca1\u6709\u5bf9\u91cd\u5b9a\u5411\u540e\u7684\u8bf7\u6c42\u5934\u505a\u8fc7\u6ee4\u5904\u7406\uff0c\u4f1a\u628a\u7b2c\u4e00\u6b21\u8bf7\u6c42\u7684 Authorization \u8bf7\u6c42\u5934\u4e5f\u4f20\u9012\u5230\u91cd\u5b9a\u5411\u540e\u7684\u670d\u52a1\uff0c\u5bfc\u81f4 Authorization \u8bf7\u6c42\u5934\u6cc4\u9732\u3002\n\u653b\u51fb\u8005\u53ef\u5229\u7528\u8be5\u6f0f\u6d1e\u88ab\u52a8\u7a83\u53d6\u7528\u6237\u7684 Authorization \u6570\u636e\u3002"
-                                  }
-                              },
-                              {
-                                  "id": "murphysec-CVE-2022-48345",
-                                  "shortDescription": {
-                                      "text": "Medium@braintree/sanitize-url6.0.0"
-                                  },
-                                  "fullDescription": {
-                                      "text": "Medium@braintree/sanitize-url6.0.0"
-                                  },
-                                  "help": {
-                                      "text": "* Braintree sanitize-url\u662f\u7f8e\u56fdBraintree\u516c\u53f8\u7684\u4e00\u79cd\u5f00\u6e90\u7684\u7f51\u5740\u6e05\u7406\u3002 \nBraintree sanitize-url 6.0.2 \u4e4b\u524d\u7248\u672c\u5b58\u5728\u5b89\u5168\u6f0f\u6d1e\uff0c\u8be5\u6f0f\u6d1e\u6e90\u4e8e\u5141\u8bb8\u901a\u8fc7 HTML \u5b9e\u4f53\u8fdb\u884cXSS\u653b\u51fb\u3002"
-                                  }
-                              },
-                              {
-                                  "id": "murphysec-CVE-2023-24535",
-                                  "shortDescription": {
-                                      "text": "Highgoogle.golang.org/protobufv1.28.0"
-                                  },
-                                  "fullDescription": {
-                                      "text": "Highgoogle.golang.org/protobufv1.28.0"
-                                  },
-                                  "help": {
-                                      "text": "* Google protobuf\u662f\u7f8e\u56fd\u8c37\u6b4c\uff08Google\uff09\u516c\u53f8\u7684\u4e00\u79cd\u6570\u636e\u4ea4\u6362\u683c\u5f0f\u3002protobuf \u5b58\u5728\u5b89\u5168\u6f0f\u6d1e\uff0c\u8be5\u6f0f\u6d1e\u6e90\u4e8e\u5728\u89e3\u6790\u65e0\u6548\u6d88\u606f\u65f6\u53ef\u80fd\u5bfc\u81f4\u6050\u614c\u3002"
-                                  }
-                              },
-                              {
-                                  "id": "murphysec-CVE-2023-28154",
-                                  "shortDescription": {
-                                      "text": "Criticalwebpack5.72.1"
-                                  },
-                                  "fullDescription": {
-                                      "text": "Criticalwebpack5.72.1"
-                                  },
-                                  "help": {
-                                      "text": "* Webpack\u662f\u4e00\u4e2a\u6a21\u5757\u6253\u5305\u5668\u3002\u5b83\u7684\u4e3b\u8981\u76ee\u7684\u662f\u6346\u7ed1 JavaScript \u6587\u4ef6\u4ee5\u4fbf\u5728\u6d4f\u89c8\u5668\u4e2d\u4f7f\u7528\uff0c\u4f46\u5b83\u4e5f\u80fd\u591f\u8f6c\u6362\u3001\u6346\u7ed1\u6216\u6253\u5305\u51e0\u4e4e\u4efb\u4f55\u8d44\u6e90\u6216\u8d44\u4ea7\u3002 \nWebpack 5\u7248\u672c\u81f35.76.0\u4e4b\u524d\u7248\u672c\u5b58\u5728\u5b89\u5168\u6f0f\u6d1e\uff0c\u8be5\u6f0f\u6d1e\u6e90\u4e8e\u6ca1\u6709\u907f\u514d\u8de8\u9886\u57df\u5bf9\u8c61\u8bbf\u95ee\u3002"
-                                  }
-                              },
-                              {
-                                  "id": "murphysec-CVE-2022-46175",
-                                  "shortDescription": {
-                                      "text": "Highjson52.2.1"
-                                  },
-                                  "fullDescription": {
-                                      "text": "Highjson52.2.1"
-                                  },
-                                  "help": {
-                                      "text": "* Tauri\u662fTauri\u5f00\u6e90\u7684\u4e00\u4e2a\u4f7f\u7528 Web \u524d\u7aef\u6784\u5efa\u66f4\u5c0f\u3001\u66f4\u5feb\u3001\u66f4\u5b89\u5168\u7684\u684c\u9762\u5e94\u7528\u7a0b\u5e8f\u3002 \nTauri 2.2.1\u7248\u672c\u53ca\u4e4b\u524d\u7248\u672c\u5b58\u5728\u5b89\u5168\u6f0f\u6d1e\uff0c\u8be5\u6f0f\u6d1e\u6e90\u4e8eparse\u65b9\u6cd5\u4e0d\u9650\u5236\u540d\u4e3a __proto__ \u952e\u7684\u89e3\u6790\uff0c\u5141\u8bb8\u6076\u610f\u5b57\u7b26\u4e32\u6c61\u67d3\u751f\u6210\u5bf9\u8c61\u7684\u539f\u578b\u3002"
-                                  }
-                              },
-                              {
-                                  "id": "murphysec-CVE-2018-16487",
-                                  "shortDescription": {
-                                      "text": "Mediumlodash.merge4.6.2"
-                                  },
-                                  "fullDescription": {
-                                      "text": "Mediumlodash.merge4.6.2"
-                                  },
-                                  "help": {
-                                      "text": "* lodash\u662f\u4e00\u6b3e\u5f00\u6e90\u7684JavaScript\u5b9e\u7528\u7a0b\u5e8f\u5e93\u3002\nlodash 4.17.11\u4e4b\u524d\u7248\u672c\u4e2d\u7531\u4e8e\u51fd\u6570merge,mergeWith\u548cdefaultsDeep\u53ef\u4ee5\u6dfb\u52a0\u6216\u4fee\u6539Object.prototype\u5bfc\u81f4\u539f\u578b\u6c61\u67d3\u6f0f\u6d1e\u3002\n\u8fd9\u4f1a\u9020\u6210\u901a\u8fc7\u89e6\u53d1 JavaScript \u5f02\u5e38\u6765\u62d2\u7edd\u670d\u52a1\uff0c\u6216\u8005\u7be1\u6539\u5e94\u7528\u7a0b\u5e8f\u6e90\u4ee3\u7801\u4ee5\u5f3a\u5236\u653b\u51fb\u8005\u6ce8\u5165\u7684\u4ee3\u7801\u8def\u5f84\uff0c\u4ece\u800c\u5bfc\u81f4\u8fdc\u7a0b\u4ee3\u7801\u6267\u884c\u3002"
-                                  }
-                              },
-                              {
-                                  "id": "murphysec-CVE-2021-23337",
-                                  "shortDescription": {
-                                      "text": "Highlodash.template4.5.0"
-                                  },
-                                  "fullDescription": {
-                                      "text": "Highlodash.template4.5.0"
-                                  },
-                                  "help": {
-                                      "text": "* lodash\u662f\u4e00\u4e2a\u63d0\u4f9b\u6a21\u5757\u5316\u3001\u6027\u80fd\u548c\u9644\u52a0\u529f\u80fd\u7684\u73b0\u4ee3 JavaScript \u5b9e\u7528\u7a0b\u5e8f\u5e93\u3002\n4.17.21 \u4e4b\u524d\u7684 Lodash \u7248\u672c\u5bb9\u6613\u901a\u8fc7\u6a21\u677f\u51fd\u6570\u8fdb\u884c\u547d\u4ee4\u6ce8\u5165\u3002"
-                                  }
-                              },
-                              {
-                                  "id": "murphysec-CVE-2022-29526",
-                                  "shortDescription": {
-                                      "text": "Mediumgolang.org/x/sysv0.0.0-20220503163025-988cb79eb6c6"
-                                  },
-                                  "fullDescription": {
-                                      "text": "Mediumgolang.org/x/sysv0.0.0-20220503163025-988cb79eb6c6"
-                                  },
-                                  "help": {
-                                      "text": "* Google Go\u662f\u7f8e\u56fd\u8c37\u6b4c\uff08Google\uff09\u516c\u53f8\u7684\u4e00\u79cd\u9759\u6001\u5f3a\u7c7b\u578b\u3001\u7f16\u8bd1\u578b\u3001\u5e76\u53d1\u578b\uff0c\u5e76\u5177\u6709\u5783\u573e\u56de\u6536\u529f\u80fd\u7684\u7f16\u7a0b\u8bed\u8a00\u3002 \nGoogle go \u5b58\u5728\u6743\u9650\u8bb8\u53ef\u548c\u8bbf\u95ee\u63a7\u5236\u95ee\u9898\u6f0f\u6d1e\uff0c\u8be5\u6f0f\u6d1e\u6e90\u4e8e\u7cfb\u7edf\u8c03\u7528\u4e2d\u7684faccessat\u5b58\u5728\u68c0\u67e5\u9519\u8bef\u3002"
-                                  }
-                              },
-                              {
-                                  "id": "murphysec-CVE-2022-41723",
-                                  "shortDescription": {
-                                      "text": "Highgolang.org/x/netv0.0.0-20220425223048-2871e0cb64e4"
-                                  },
-                                  "fullDescription": {
-                                      "text": "Highgolang.org/x/netv0.0.0-20220425223048-2871e0cb64e4"
-                                  },
-                                  "help": {
-                                      "text": "* \u6076\u610f\u6784\u9020\u7684http/2\u6570\u636e\u6d41\u53ef\u80fd\u4f1a\u5728hpack\u89e3\u7801\u5668\u4e2d\u5f15\u8d77\u8fc7\u591a\u7684CPU\u6d88\u8017\uff0c\u8db3\u4ee5\u5bfc\u81f4\u5c11\u91cf\u5c0f\u8bf7\u6c42\u7684\u62d2\u7edd\u670d\u52a1\u653b\u51fb\u3002"
-                                  }
-                              },
-                              {
-                                  "id": "murphysec-CVE-2022-28948",
-                                  "shortDescription": {
-                                      "text": "Highgopkg.in/yaml.v3v3.0.0-20210107192922-496545a6307b"
-                                  },
-                                  "fullDescription": {
-                                      "text": "Highgopkg.in/yaml.v3v3.0.0-20210107192922-496545a6307b"
-                                  },
-                                  "help": {
-                                      "text": "* Go-Yaml\u662f\u4e00\u79cd Yaml \u5bf9 Go \u8bed\u8a00\u7684\u652f\u6301\u3002\u4f7f Go \u7a0b\u5e8f\u80fd\u591f\u8f7b\u677e\u5730\u5bf9 Yaml \u503c\u8fdb\u884c\u7f16\u7801\u548c\u89e3\u7801\u3002\nGo-Yaml v3\u5b58\u5728\u5b89\u5168\u6f0f\u6d1e\u3002\u653b\u51fb\u8005\u5229\u7528\u8be5\u6f0f\u6d1e\u901a\u8fc7Unmarshal\u51fd\u6570\u5bfc\u81f4\u7a0b\u5e8f\u5728\u5c1d\u8bd5\u53cd\u5e8f\u5217\u5316\u65e0\u6548\u8f93\u5165\u65f6\u5d29\u6e83\u3002"
-                                  }
-                              }
-                          ]
-                      }
-                  },
-                  "results": [
-                      {
-                          "ruleId": "murphysec-CVE-2022-25858",
-                          "level": "warning",
-                          "message": {
-                              "text": "Highterser5.13.1"
-                          },
-                          "locations": [
-                              {
-                                  "physicalLocation": {
-                                      "artifactLocation": {
-                                          "uri": ""
-                                      },
-                                      "region": {
-                                          "startLine": 1
-                                      }
-                                  }
-                              }
-                          ]
-                      },
-                      {
-                          "ruleId": "murphysec-CVE-2022-37599",
-                          "level": "warning",
-                          "message": {
-                              "text": "Highloader-utils2.0.2"
-                          },
-                          "locations": [
-                              {
-                                  "physicalLocation": {
-                                      "artifactLocation": {
-                                          "uri": ""
-                                      },
-                                      "region": {
-                                          "startLine": 1
-                                      }
-                                  }
-                              }
-                          ]
-                      },
-                      {
-                          "ruleId": "murphysec-CVE-2022-31108",
-                          "level": "warning",
-                          "message": {
-                              "text": "Mediummermaid9.1.1"
-                          },
-                          "locations": [
-                              {
-                                  "physicalLocation": {
-                                      "artifactLocation": {
-                                          "uri": ""
-                                      },
-                                      "region": {
-                                          "startLine": 1
-                                      }
-                                  }
-                              }
-                          ]
-                      },
-                      {
-                          "ruleId": "murphysec-",
-                          "level": "warning",
-                          "message": {
-                              "text": "Mediumneedle2.9.1"
-                          },
-                          "locations": [
-                              {
-                                  "physicalLocation": {
-                                      "artifactLocation": {
-                                          "uri": ""
-                                      },
-                                      "region": {
-                                          "startLine": 1
-                                      }
-                                  }
-                              }
-                          ]
-                      },
-                      {
-                          "ruleId": "murphysec-CVE-2022-48345",
-                          "level": "warning",
-                          "message": {
-                              "text": "Medium@braintree/sanitize-url6.0.0"
-                          },
-                          "locations": [
-                              {
-                                  "physicalLocation": {
-                                      "artifactLocation": {
-                                          "uri": ""
-                                      },
-                                      "region": {
-                                          "startLine": 1
-                                      }
-                                  }
-                              }
-                          ]
-                      },
-                      {
-                          "ruleId": "murphysec-CVE-2023-24535",
-                          "level": "warning",
-                          "message": {
-                              "text": "Highgoogle.golang.org/protobufv1.28.0"
-                          },
-                          "locations": [
-                              {
-                                  "physicalLocation": {
-                                      "artifactLocation": {
-                                          "uri": ""
-                                      },
-                                      "region": {
-                                          "startLine": 1
-                                      }
-                                  }
-                              }
-                          ]
-                      },
-                      {
-                          "ruleId": "murphysec-CVE-2023-28154",
-                          "level": "warning",
-                          "message": {
-                              "text": "Criticalwebpack5.72.1"
-                          },
-                          "locations": [
-                              {
-                                  "physicalLocation": {
-                                      "artifactLocation": {
-                                          "uri": ""
-                                      },
-                                      "region": {
-                                          "startLine": 1
-                                      }
-                                  }
-                              }
-                          ]
-                      },
-                      {
-                          "ruleId": "murphysec-CVE-2022-46175",
-                          "level": "warning",
-                          "message": {
-                              "text": "Highjson52.2.1"
-                          },
-                          "locations": [
-                              {
-                                  "physicalLocation": {
-                                      "artifactLocation": {
-                                          "uri": ""
-                                      },
-                                      "region": {
-                                          "startLine": 1
-                                      }
-                                  }
-                              }
-                          ]
-                      },
-                      {
-                          "ruleId": "murphysec-CVE-2018-16487",
-                          "level": "warning",
-                          "message": {
-                              "text": "Mediumlodash.merge4.6.2"
-                          },
-                          "locations": [
-                              {
-                                  "physicalLocation": {
-                                      "artifactLocation": {
-                                          "uri": ""
-                                      },
-                                      "region": {
-                                          "startLine": 1
-                                      }
-                                  }
-                              }
-                          ]
-                      },
-                      {
-                          "ruleId": "murphysec-CVE-2021-23337",
-                          "level": "warning",
-                          "message": {
-                              "text": "Highlodash.template4.5.0"
-                          },
-                          "locations": [
-                              {
-                                  "physicalLocation": {
-                                      "artifactLocation": {
-                                          "uri": ""
-                                      },
-                                      "region": {
-                                          "startLine": 1
-                                      }
-                                  }
-                              }
-                          ]
-                      },
-                      {
-                          "ruleId": "murphysec-CVE-2022-29526",
-                          "level": "warning",
-                          "message": {
-                              "text": "Mediumgolang.org/x/sysv0.0.0-20220503163025-988cb79eb6c6"
-                          },
-                          "locations": [
-                              {
-                                  "physicalLocation": {
-                                      "artifactLocation": {
-                                          "uri": ""
-                                      },
-                                      "region": {
-                                          "startLine": 1
-                                      }
-                                  }
-                              }
-                          ]
-                      },
-                      {
-                          "ruleId": "murphysec-CVE-2022-41723",
-                          "level": "warning",
-                          "message": {
-                              "text": "Highgolang.org/x/netv0.0.0-20220425223048-2871e0cb64e4"
-                          },
-                          "locations": [
-                              {
-                                  "physicalLocation": {
-                                      "artifactLocation": {
-                                          "uri": ""
-                                      },
-                                      "region": {
-                                          "startLine": 1
-                                      }
-                                  }
-                              }
-                          ]
-                      },
-                      {
-                          "ruleId": "murphysec-CVE-2022-28948",
-                          "level": "warning",
-                          "message": {
-                              "text": "Highgopkg.in/yaml.v3v3.0.0-20210107192922-496545a6307b"
-                          },
-                          "locations": [
-                              {
-                                  "physicalLocation": {
-                                      "artifactLocation": {
-                                          "uri": ""
-                                      },
-                                      "region": {
-                                          "startLine": 1
+            "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+            "version": "2.1.0",
+            "runs": [
+                {
+                    "tool": {
+                        "driver": {
+                            "name": "Murphy-cli",
+                            "rules": [
+                                {
+                                    "id": "murphysec-CVE-2022-25858",
+                                    "shortDescription": {
+                                        "text": "Highterser5.13.1"
+                                    },
+                                    "fullDescription": {
+                                        "text": "Highterser5.13.1"
+                                    },
+                                    "help": {
+                                        "text": "* terser\u662fterser\u4e2a\u4eba\u5f00\u53d1\u8005\u7684\u4e00\u4e2a\u7528\u4e8e ES6+ \u7684 JavaScript \u89e3\u6790\u5668\u3001\u5904\u7406\u7a0b\u5e8f\u548c\u538b\u7f29\u5668\u5de5\u5177\u5305\u3002 \nterser 4.8.1 \u4e4b\u524d\u7248\u672c\u30015.0.0 \u548c 5.14.2 \u4e4b\u524d\u7248\u672c\u5b58\u5728\u5b89\u5168\u6f0f\u6d1e\uff0c\u8be5\u6f0f\u6d1e\u6e90\u4e8e\u6b63\u5219\u8868\u8fbe\u5f0f\u7684\u4f7f\u7528\u4e0d\u5b89\u5168\uff0c\u5bfc\u81f4\u5bb9\u6613\u53d7\u5230\u6b63\u5219\u8868\u8fbe\u5f0f\u62d2\u7edd\u670d\u52a1 (ReDoS) \u7684\u653b\u51fb\u3002"
+                                    }
+                                },
+                                {
+                                    "id": "murphysec-CVE-2022-37599",
+                                    "shortDescription": {
+                                        "text": "Highloader-utils2.0.2"
+                                    },
+                                    "fullDescription": {
+                                        "text": "Highloader-utils2.0.2"
+                                    },
+                                    "help": {
+                                        "text": "* loader-utils\u662fwebpack\u5f00\u6e90\u7684\u4e00\u4e2a\u7528\u4e8e webpack \u52a0\u8f7d\u5668\u7684\u5b9e\u7528\u7a0b\u5e8f\u3002 \nwebpack loader-utils 2.0.0\u7248\u672c\u5b58\u5728\u5b89\u5168\u6f0f\u6d1e\uff0c\u8be5\u6f0f\u6d1e\u6e90\u4e8e\u5728interpolateName\u7684interpoleName\u51fd\u6570\u4e2d\u53d1\u73b0\u5305\u542b\u6b63\u5219\u8868\u8fbe\u5f0f\u62d2\u7edd\u670d\u52a1\uff08ReDoS\uff09\u6f0f\u6d1e\u3002"
+                                    }
+                                },
+                                {
+                                    "id": "murphysec-CVE-2022-31108",
+                                    "shortDescription": {
+                                        "text": "Mediummermaid9.1.1"
+                                    },
+                                    "fullDescription": {
+                                        "text": "Mediummermaid9.1.1"
+                                    },
+                                    "help": {
+                                        "text": "* Mermaid\u662f\u4e00\u4e2a\u5e94\u7528\u8f6f\u4ef6\u3002\u4f7f\u7528\u6587\u672c\u548c\u4ee3\u7801\u521b\u5efa\u56fe\u8868\u548c\u53ef\u89c6\u5316\u3002\nMermaid 9.1.3\u4e4b\u524d\u7248\u672c\u5b58\u5728\u6ce8\u5165\u6f0f\u6d1e\uff0c\u8be5\u6f0f\u6d1e\u6e90\u4e8e\u53ea\u8981\u6709\u5b9e\u9645\u5339\u914d\uff0c\u6d4f\u89c8\u5668\u5c31\u4f1a\u53d1\u51fa\u4e00\u4e2a http \u8bf7\u6c42\uff0c\u4ee5 load \u4e00\u4e2a\u80cc\u666f\u56fe\u50cf\uff0c\u8ba9\u653b\u51fb\u8005\u77e5\u9053\u8be5\u5b57\u7b26\u7684\u503c\u662f\u4ec0\u4e48\uff0c\u653b\u51fb\u8005\u5229\u7528\u8be5\u6f0f\u6d1e\u80fd\u591f\u5c06\u4efb\u610f CSS \u6ce8\u5165\u5230\u751f\u6210\u7684\u56fe\u5f62\u4e2d\uff0c\u4ece\u800c\u5141\u8bb8\u4ed6\u4eec\u66f4\u6539\u751f\u6210\u56fe\u5f62\u4e4b\u5916\u7684\u5143\u7d20\u6837\u5f0f\uff0c\u5e76\u53ef\u80fd\u901a\u8fc7\u4f7f\u7528\u7279\u5236\u7684 CSS \u9009\u62e9\u5668\u6cc4\u9732\u654f\u611f\u4fe1\u606f\u3002"
+                                    }
+                                },
+                                {
+                                    "id": "murphysec-CVE-2022-48345",
+                                    "shortDescription": {
+                                        "text": "Medium@braintree/sanitize-url6.0.0"
+                                    },
+                                    "fullDescription": {
+                                        "text": "Medium@braintree/sanitize-url6.0.0"
+                                    },
+                                    "help": {
+                                        "text": "* Braintree sanitize-url\u662f\u7f8e\u56fdBraintree\u516c\u53f8\u7684\u4e00\u79cd\u5f00\u6e90\u7684\u7f51\u5740\u6e05\u7406\u3002 \nBraintree sanitize-url 6.0.2 \u4e4b\u524d\u7248\u672c\u5b58\u5728\u5b89\u5168\u6f0f\u6d1e\uff0c\u8be5\u6f0f\u6d1e\u6e90\u4e8e\u5141\u8bb8\u901a\u8fc7 HTML \u5b9e\u4f53\u8fdb\u884cXSS\u653b\u51fb\u3002"
+                                    }
+                                },
+                                {
+                                    "id": "murphysec-CVE-2023-24535",
+                                    "shortDescription": {
+                                        "text": "Highgoogle.golang.org/protobufv1.28.0"
+                                    },
+                                    "fullDescription": {
+                                        "text": "Highgoogle.golang.org/protobufv1.28.0"
+                                    },
+                                    "help": {
+                                        "text": "* Google protobuf\u662f\u7f8e\u56fd\u8c37\u6b4c\uff08Google\uff09\u516c\u53f8\u7684\u4e00\u79cd\u6570\u636e\u4ea4\u6362\u683c\u5f0f\u3002protobuf \u5b58\u5728\u5b89\u5168\u6f0f\u6d1e\uff0c\u8be5\u6f0f\u6d1e\u6e90\u4e8e\u5728\u89e3\u6790\u65e0\u6548\u6d88\u606f\u65f6\u53ef\u80fd\u5bfc\u81f4\u6050\u614c\u3002"
+                                    }
+                                },
+                                {
+                                    "id": "murphysec-CVE-2023-28154",
+                                    "shortDescription": {
+                                        "text": "Criticalwebpack5.72.1"
+                                    },
+                                    "fullDescription": {
+                                        "text": "Criticalwebpack5.72.1"
+                                    },
+                                    "help": {
+                                        "text": "* Webpack\u662f\u4e00\u4e2a\u6a21\u5757\u6253\u5305\u5668\u3002\u5b83\u7684\u4e3b\u8981\u76ee\u7684\u662f\u6346\u7ed1 JavaScript \u6587\u4ef6\u4ee5\u4fbf\u5728\u6d4f\u89c8\u5668\u4e2d\u4f7f\u7528\uff0c\u4f46\u5b83\u4e5f\u80fd\u591f\u8f6c\u6362\u3001\u6346\u7ed1\u6216\u6253\u5305\u51e0\u4e4e\u4efb\u4f55\u8d44\u6e90\u6216\u8d44\u4ea7\u3002 \nWebpack 5\u7248\u672c\u81f35.76.0\u4e4b\u524d\u7248\u672c\u5b58\u5728\u5b89\u5168\u6f0f\u6d1e\uff0c\u8be5\u6f0f\u6d1e\u6e90\u4e8e\u6ca1\u6709\u907f\u514d\u8de8\u9886\u57df\u5bf9\u8c61\u8bbf\u95ee\u3002"
+                                    }
+                                },
+                                {
+                                    "id": "murphysec-CVE-2022-46175",
+                                    "shortDescription": {
+                                        "text": "Highjson52.2.1"
+                                    },
+                                    "fullDescription": {
+                                        "text": "Highjson52.2.1"
+                                    },
+                                    "help": {
+                                        "text": "* Tauri\u662fTauri\u5f00\u6e90\u7684\u4e00\u4e2a\u4f7f\u7528 Web \u524d\u7aef\u6784\u5efa\u66f4\u5c0f\u3001\u66f4\u5feb\u3001\u66f4\u5b89\u5168\u7684\u684c\u9762\u5e94\u7528\u7a0b\u5e8f\u3002 \nTauri 2.2.1\u7248\u672c\u53ca\u4e4b\u524d\u7248\u672c\u5b58\u5728\u5b89\u5168\u6f0f\u6d1e\uff0c\u8be5\u6f0f\u6d1e\u6e90\u4e8eparse\u65b9\u6cd5\u4e0d\u9650\u5236\u540d\u4e3a __proto__ \u952e\u7684\u89e3\u6790\uff0c\u5141\u8bb8\u6076\u610f\u5b57\u7b26\u4e32\u6c61\u67d3\u751f\u6210\u5bf9\u8c61\u7684\u539f\u578b\u3002"
+                                    }
+                                },
+                                {
+                                    "id": "murphysec-CVE-2018-16487",
+                                    "shortDescription": {
+                                        "text": "Mediumlodash.merge4.6.2"
+                                    },
+                                    "fullDescription": {
+                                        "text": "Mediumlodash.merge4.6.2"
+                                    },
+                                    "help": {
+                                        "text": "* lodash\u662f\u4e00\u6b3e\u5f00\u6e90\u7684JavaScript\u5b9e\u7528\u7a0b\u5e8f\u5e93\u3002\nlodash 4.17.11\u4e4b\u524d\u7248\u672c\u4e2d\u7531\u4e8e\u51fd\u6570merge,mergeWith\u548cdefaultsDeep\u53ef\u4ee5\u6dfb\u52a0\u6216\u4fee\u6539Object.prototype\u5bfc\u81f4\u539f\u578b\u6c61\u67d3\u6f0f\u6d1e\u3002\n\u8fd9\u4f1a\u9020\u6210\u901a\u8fc7\u89e6\u53d1 JavaScript \u5f02\u5e38\u6765\u62d2\u7edd\u670d\u52a1\uff0c\u6216\u8005\u7be1\u6539\u5e94\u7528\u7a0b\u5e8f\u6e90\u4ee3\u7801\u4ee5\u5f3a\u5236\u653b\u51fb\u8005\u6ce8\u5165\u7684\u4ee3\u7801\u8def\u5f84\uff0c\u4ece\u800c\u5bfc\u81f4\u8fdc\u7a0b\u4ee3\u7801\u6267\u884c\u3002"
+                                    }
+                                },
+                                {
+                                    "id": "murphysec-CVE-2021-23337",
+                                    "shortDescription": {
+                                        "text": "Highlodash.template4.5.0"
+                                    },
+                                    "fullDescription": {
+                                        "text": "Highlodash.template4.5.0"
+                                    },
+                                    "help": {
+                                        "text": "* lodash\u662f\u4e00\u4e2a\u63d0\u4f9b\u6a21\u5757\u5316\u3001\u6027\u80fd\u548c\u9644\u52a0\u529f\u80fd\u7684\u73b0\u4ee3 JavaScript \u5b9e\u7528\u7a0b\u5e8f\u5e93\u3002\n4.17.21 \u4e4b\u524d\u7684 Lodash \u7248\u672c\u5bb9\u6613\u901a\u8fc7\u6a21\u677f\u51fd\u6570\u8fdb\u884c\u547d\u4ee4\u6ce8\u5165\u3002"
+                                    }
+                                },
+                                {
+                                    "id": "murphysec-CVE-2022-29526",
+                                    "shortDescription": {
+                                        "text": "Mediumgolang.org/x/sysv0.0.0-20220503163025-988cb79eb6c6"
+                                    },
+                                    "fullDescription": {
+                                        "text": "Mediumgolang.org/x/sysv0.0.0-20220503163025-988cb79eb6c6"
+                                    },
+                                    "help": {
+                                        "text": "* Google Go\u662f\u7f8e\u56fd\u8c37\u6b4c\uff08Google\uff09\u516c\u53f8\u7684\u4e00\u79cd\u9759\u6001\u5f3a\u7c7b\u578b\u3001\u7f16\u8bd1\u578b\u3001\u5e76\u53d1\u578b\uff0c\u5e76\u5177\u6709\u5783\u573e\u56de\u6536\u529f\u80fd\u7684\u7f16\u7a0b\u8bed\u8a00\u3002 \nGoogle go \u5b58\u5728\u6743\u9650\u8bb8\u53ef\u548c\u8bbf\u95ee\u63a7\u5236\u95ee\u9898\u6f0f\u6d1e\uff0c\u8be5\u6f0f\u6d1e\u6e90\u4e8e\u7cfb\u7edf\u8c03\u7528\u4e2d\u7684faccessat\u5b58\u5728\u68c0\u67e5\u9519\u8bef\u3002"
+                                    }
+                                },
+                                {
+                                    "id": "murphysec-CVE-2022-41723",
+                                    "shortDescription": {
+                                        "text": "Highgolang.org/x/netv0.0.0-20220425223048-2871e0cb64e4"
+                                    },
+                                    "fullDescription": {
+                                        "text": "Highgolang.org/x/netv0.0.0-20220425223048-2871e0cb64e4"
+                                    },
+                                    "help": {
+                                        "text": "* \u6076\u610f\u6784\u9020\u7684http/2\u6570\u636e\u6d41\u53ef\u80fd\u4f1a\u5728hpack\u89e3\u7801\u5668\u4e2d\u5f15\u8d77\u8fc7\u591a\u7684CPU\u6d88\u8017\uff0c\u8db3\u4ee5\u5bfc\u81f4\u5c11\u91cf\u5c0f\u8bf7\u6c42\u7684\u62d2\u7edd\u670d\u52a1\u653b\u51fb\u3002"
+                                    }
+                                },
+                                {
+                                    "id": "murphysec-CVE-2022-28948",
+                                    "shortDescription": {
+                                        "text": "Highgopkg.in/yaml.v3v3.0.0-20210107192922-496545a6307b"
+                                    },
+                                    "fullDescription": {
+                                        "text": "Highgopkg.in/yaml.v3v3.0.0-20210107192922-496545a6307b"
+                                    },
+                                    "help": {
+                                        "text": "* Go-Yaml\u662f\u4e00\u79cd Yaml \u5bf9 Go \u8bed\u8a00\u7684\u652f\u6301\u3002\u4f7f Go \u7a0b\u5e8f\u80fd\u591f\u8f7b\u677e\u5730\u5bf9 Yaml \u503c\u8fdb\u884c\u7f16\u7801\u548c\u89e3\u7801\u3002\nGo-Yaml v3\u5b58\u5728\u5b89\u5168\u6f0f\u6d1e\u3002\u653b\u51fb\u8005\u5229\u7528\u8be5\u6f0f\u6d1e\u901a\u8fc7Unmarshal\u51fd\u6570\u5bfc\u81f4\u7a0b\u5e8f\u5728\u5c1d\u8bd5\u53cd\u5e8f\u5217\u5316\u65e0\u6548\u8f93\u5165\u65f6\u5d29\u6e83\u3002"
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    "results": [
+                        {
+                            "ruleId": "murphysec-CVE-2022-25858",
+                            "level": "warning",
+                            "message": {
+                                "text": "Highterser5.13.1"
+                            },
+                            "locations": [
+                                {
+                                    "physicalLocation": {
+                                        "artifactLocation": {
+                                            "uri": ""
+                                        },
+                                        "region": {
+                                            "startLine": 1
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "ruleId": "murphysec-CVE-2022-37599",
+                            "level": "warning",
+                            "message": {
+                                "text": "Highloader-utils2.0.2"
+                            },
+                            "locations": [
+                                {
+                                    "physicalLocation": {
+                                        "artifactLocation": {
+                                            "uri": ""
+                                        },
+                                        "region": {
+                                            "startLine": 1
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "ruleId": "murphysec-CVE-2022-31108",
+                            "level": "warning",
+                            "message": {
+                                "text": "Mediummermaid9.1.1"
+                            },
+                            "locations": [
+                                {
+                                    "physicalLocation": {
+                                        "artifactLocation": {
+                                            "uri": ""
+                                        },
+                                        "region": {
+                                            "startLine": 1
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "ruleId": "murphysec-CVE-2022-48345",
+                            "level": "warning",
+                            "message": {
+                                "text": "Medium@braintree/sanitize-url6.0.0"
+                            },
+                            "locations": [
+                                {
+                                    "physicalLocation": {
+                                        "artifactLocation": {
+                                            "uri": ""
+                                        },
+                                        "region": {
+                                            "startLine": 1
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "ruleId": "murphysec-CVE-2023-24535",
+                            "level": "warning",
+                            "message": {
+                                "text": "Highgoogle.golang.org/protobufv1.28.0"
+                            },
+                            "locations": [
+                                {
+                                    "physicalLocation": {
+                                        "artifactLocation": {
+                                            "uri": ""
+                                        },
+                                        "region": {
+                                            "startLine": 1
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "ruleId": "murphysec-CVE-2023-28154",
+                            "level": "warning",
+                            "message": {
+                                "text": "Criticalwebpack5.72.1"
+                            },
+                            "locations": [
+                                {
+                                    "physicalLocation": {
+                                        "artifactLocation": {
+                                            "uri": ""
+                                        },
+                                        "region": {
+                                            "startLine": 1
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "ruleId": "murphysec-CVE-2022-46175",
+                            "level": "warning",
+                            "message": {
+                                "text": "Highjson52.2.1"
+                            },
+                            "locations": [
+                                {
+                                    "physicalLocation": {
+                                        "artifactLocation": {
+                                            "uri": ""
+                                        },
+                                        "region": {
+                                            "startLine": 1
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "ruleId": "murphysec-CVE-2018-16487",
+                            "level": "warning",
+                            "message": {
+                                "text": "Mediumlodash.merge4.6.2"
+                            },
+                            "locations": [
+                                {
+                                    "physicalLocation": {
+                                        "artifactLocation": {
+                                            "uri": ""
+                                        },
+                                        "region": {
+                                            "startLine": 1
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "ruleId": "murphysec-CVE-2021-23337",
+                            "level": "warning",
+                            "message": {
+                                "text": "Highlodash.template4.5.0"
+                            },
+                            "locations": [
+                                {
+                                    "physicalLocation": {
+                                        "artifactLocation": {
+                                            "uri": ""
+                                        },
+                                        "region": {
+                                            "startLine": 1
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "ruleId": "murphysec-CVE-2022-29526",
+                            "level": "warning",
+                            "message": {
+                                "text": "Mediumgolang.org/x/sysv0.0.0-20220503163025-988cb79eb6c6"
+                            },
+                            "locations": [
+                                {
+                                    "physicalLocation": {
+                                        "artifactLocation": {
+                                            "uri": ""
+                                        },
+                                        "region": {
+                                            "startLine": 1
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "ruleId": "murphysec-CVE-2022-41723",
+                            "level": "warning",
+                            "message": {
+                                "text": "Highgolang.org/x/netv0.0.0-20220425223048-2871e0cb64e4"
+                            },
+                            "locations": [
+                                {
+                                    "physicalLocation": {
+                                        "artifactLocation": {
+                                            "uri": ""
+                                        },
+                                        "region": {
+                                            "startLine": 1
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "ruleId": "murphysec-CVE-2022-28948",
+                            "level": "warning",
+                            "message": {
+                                "text": "Highgopkg.in/yaml.v3v3.0.0-20210107192922-496545a6307b"
+                            },
+                            "locations": [
+                                {
+                                    "physicalLocation": {
+                                        "artifactLocation": {
+                                            "uri": ""
+                                        },
+                                        "region": {
+                                            "startLine": 1
                                             }
                                         }
                                     }
