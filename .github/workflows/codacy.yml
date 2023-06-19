@@ -187,6 +187,9 @@ jobs:
                       {
                           "ruleId": "murphysec-CVE-2022-25858",
                           "level": "warning",
+                          "message": {
+                              "text": "Highterser5.13.1"
+                          },
                           "locations": [
                               {
                                   "physicalLocation": {
@@ -203,6 +206,9 @@ jobs:
                       {
                           "ruleId": "murphysec-CVE-2022-37599",
                           "level": "warning",
+                          "message": {
+                              "text": "Highloader-utils2.0.2"
+                          },
                           "locations": [
                               {
                                   "physicalLocation": {
@@ -219,6 +225,9 @@ jobs:
                       {
                           "ruleId": "murphysec-CVE-2022-31108",
                           "level": "warning",
+                          "message": {
+                              "text": "Mediummermaid9.1.1"
+                          },
                           "locations": [
                               {
                                   "physicalLocation": {
@@ -235,6 +244,9 @@ jobs:
                       {
                           "ruleId": "murphysec-",
                           "level": "warning",
+                          "message": {
+                              "text": "Mediumneedle2.9.1"
+                          },
                           "locations": [
                               {
                                   "physicalLocation": {
@@ -251,6 +263,9 @@ jobs:
                       {
                           "ruleId": "murphysec-CVE-2022-48345",
                           "level": "warning",
+                          "message": {
+                              "text": "Medium@braintree/sanitize-url6.0.0"
+                          },
                           "locations": [
                               {
                                   "physicalLocation": {
@@ -267,6 +282,9 @@ jobs:
                       {
                           "ruleId": "murphysec-CVE-2023-24535",
                           "level": "warning",
+                          "message": {
+                              "text": "Highgoogle.golang.org/protobufv1.28.0"
+                          },
                           "locations": [
                               {
                                   "physicalLocation": {
@@ -283,6 +301,9 @@ jobs:
                       {
                           "ruleId": "murphysec-CVE-2023-28154",
                           "level": "warning",
+                          "message": {
+                              "text": "Criticalwebpack5.72.1"
+                          },
                           "locations": [
                               {
                                   "physicalLocation": {
@@ -299,6 +320,9 @@ jobs:
                       {
                           "ruleId": "murphysec-CVE-2022-46175",
                           "level": "warning",
+                          "message": {
+                              "text": "Highjson52.2.1"
+                          },
                           "locations": [
                               {
                                   "physicalLocation": {
@@ -315,6 +339,9 @@ jobs:
                       {
                           "ruleId": "murphysec-CVE-2018-16487",
                           "level": "warning",
+                          "message": {
+                              "text": "Mediumlodash.merge4.6.2"
+                          },
                           "locations": [
                               {
                                   "physicalLocation": {
@@ -331,6 +358,9 @@ jobs:
                       {
                           "ruleId": "murphysec-CVE-2021-23337",
                           "level": "warning",
+                          "message": {
+                              "text": "Highlodash.template4.5.0"
+                          },
                           "locations": [
                               {
                                   "physicalLocation": {
@@ -347,6 +377,9 @@ jobs:
                       {
                           "ruleId": "murphysec-CVE-2022-29526",
                           "level": "warning",
+                          "message": {
+                              "text": "Mediumgolang.org/x/sysv0.0.0-20220503163025-988cb79eb6c6"
+                          },
                           "locations": [
                               {
                                   "physicalLocation": {
@@ -363,6 +396,9 @@ jobs:
                       {
                           "ruleId": "murphysec-CVE-2022-41723",
                           "level": "warning",
+                          "message": {
+                              "text": "Highgolang.org/x/netv0.0.0-20220425223048-2871e0cb64e4"
+                          },
                           "locations": [
                               {
                                   "physicalLocation": {
@@ -379,6 +415,9 @@ jobs:
                       {
                           "ruleId": "murphysec-CVE-2022-28948",
                           "level": "warning",
+                          "message": {
+                              "text": "Highgopkg.in/yaml.v3v3.0.0-20210107192922-496545a6307b"
+                          },
                           "locations": [
                               {
                                   "physicalLocation": {
