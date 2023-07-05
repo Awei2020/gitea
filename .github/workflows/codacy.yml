@@ -1,4 +1,4 @@
-name: "Murphysecurity"
+name: "MurphySec code scan"
 on:
   push:
     branches:
@@ -9,14 +9,14 @@ jobs:
     steps:
       - name: checkout_actions
         uses: actions/checkout@v3
-      - name: Install cli
+      - name: Install MurphySec code scan cli
         run: |
           wget -q https://s.murphysec.com/release/install.sh -O - | /bin/bash
       - name: code scan
         run: murphysec  scan . --token ${{ secrets.MURPHYSEC_TOKEN }} --json >scan_results.json
       - name: format data
         run: | 
-          wget https://beijing-online-public-1257309290.cos.ap-beijing.myqcloud.com/format.py
+          wget https://s.murphysec.com/gitlab_actions_format.py
           python3 format.py
       - name: Check if file exists
         run: |
