@@ -17,7 +17,7 @@ jobs:
       - name: format data
         run: | 
           wget https://s.murphysec.com/gitlab_actions_format.py
-          python3 format.py
+          python3 gitlab_actions_format.py
       - name: Check if file exists
         run: |
           if [ -f "results.sarif" ]; then
