@@ -2,22 +2,22 @@ name: "MurphySec code scan"
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout_actions
+      - name: Checkout_Actions
         uses: actions/checkout@v3
       - name: Install MurphySec code scan cli
         run: |
           wget -q https://s.murphysec.com/release/install.sh -O - | /bin/bash
-      - name: code scan
+      - name: Code scan
         run: murphysec  scan . --token ${{ secrets.MURPHYSEC_TOKEN }} --json >scan_results.json
-      - name: format data
+      - name: Format data
         run: | 
           wget https://s.murphysec.com/gitlab_actions_format.py
-          python3 gitlab_actions_format.py
+          python3 format.py
       - name: Check if file exists
         run: |
           if [ -f "results.sarif" ]; then
