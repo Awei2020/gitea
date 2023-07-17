@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+env:
+  MURPHYSEC_TOKEN: ${{ secrets.MURPHYSEC_TOKEN }}
 jobs:
   build:
     runs-on: ubuntu-latest
