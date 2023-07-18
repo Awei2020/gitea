@@ -8,5 +8,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: MurphySec code scan
-        uses: murphysecurity/actions@v1.0.8
+        uses: murphysecurity/actions@v1.0.9
 
