@@ -9,4 +9,6 @@ jobs:
     steps:
       - name: MurphySec code scan
         uses: murphysecurity/actions@v1.0.9
+        with:
+          MURPHYSEC_TOKEN: ${{ secrets.MURPHYSEC_TOKEN }}
 
